@@ -9,7 +9,7 @@
 
 # Add files or directories to the blacklist. They should be base names, not
 # paths.
-#ignore=
+ignore=.git
 
 # Pickle collected data for later comparisons.
 persistent=yes
@@ -76,7 +76,7 @@ output-format=colorized
 files-output=no
 
 # Tells whether to display a full report or only the messages
-reports=no
+reports=yes
 
 # Python expression which should return a note less than 10 (10 is the highest
 # note). You have access to the variables errors warning, statement which

@@ -1,0 +1,21 @@
+language: python
+sudo: false
+python:
+  - "2.7"
+  
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+install:
+  - travis_retry pip install -q behave pylint
+#  - python setup.py -q install
+
+script:
+  - python --version
+  - pylint nimbus_pi --rcfile=.pylintrc
+#  - behave -f progress --junit tests/
+
+#after_failure:
+#  - echo "FAILURE DETAILS (from XML reports):"
+#  - bin/behave.junit_filter.py --status=failed reports
