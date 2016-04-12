@@ -1,0 +1,9 @@
+[Core]
+Name = helloworld
+Module = helloworld
+   
+[Documentation]
+Description = A static data sensor that provides HelloWorld data as a response. Intended for testing.
+Author = Andrew Vaughan
+Version = 1.0.0
+Website = http://nimbuspi.com/
