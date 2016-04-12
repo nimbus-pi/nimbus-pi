@@ -8,7 +8,7 @@ cache:
     - $HOME/.cache/pip
 
 install:
-  - travis_retry pip install -q behave pylint
+  - travis_retry pip install -q -r requirements.txt
 #  - python setup.py -q install
 
 script:
