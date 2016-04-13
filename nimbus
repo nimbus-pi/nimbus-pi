@@ -1,5 +1,3 @@
-#!/usr/bin/env python
+#!/bin/bash
 
-import runpy
-
-runpy.run_module('nimbus_pi')
+python -m nimbuspi "$@"
