@@ -13,8 +13,9 @@ install:
 
 script:
   - python --version
-  - pylint nimbus_pi --rcfile=.pylintrc
-#  - behave -f progress --junit tests/
+  - pylint nimbuspi --rcfile=.pylintrc
+  - pylint nimbuspi/tests/steps/*.py --rcfile=.pylintrc
+  - behave nimbuspi/tests/
 
 #after_failure:
 #  - echo "FAILURE DETAILS (from XML reports):"

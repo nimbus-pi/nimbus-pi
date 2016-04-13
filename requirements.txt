@@ -1,4 +1,6 @@
-pylint
 behave
 configparser
+coverage
+pylint
+testfixtures
 yapsy
