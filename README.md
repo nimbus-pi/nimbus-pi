@@ -37,7 +37,7 @@ $ make test
 
 # Usage
 
-Once installed, running your NimbusPI webserver is as simple as calling:
+Once installed, running your NimbusPI is as simple as running the provided executable:
 
 ```bash
 $ ./nimbus
@@ -81,7 +81,7 @@ mybroadcaster1
 mybroadcaster2
 ```
 
-The `station` section is used to describe details about your station.  Some sensorsr you install can override these
+The `station` section is used to describe details about your station.  Some sensors you install can override these
 settings, but the config provides a fallback in case the sensors are not available, or do not function.
 
 The `sensors` and `broadcasters` sections contain lists of plugins to activate when the NimbusPI weather station is
@@ -95,7 +95,7 @@ module you wish to install.
 # Contributing
 
 There are many ways to contribute to NimbusPI!  If you have an idea, or have discovered a bug, please
-[Open an Issue](https://github.com/nimbus-pi/nimbus-pi/issues) so it can be addressed.
+[open an issue](https://github.com/nimbus-pi/nimbus-pi/issues) so it can be addressed.
 
 If you are interested in contributing to the project through design or development, please read our
 [Contribution Guidelines](https://github.com/nimbus-pi/nimbus-pi/blob/master/CONTRIBUTING.md).
