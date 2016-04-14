@@ -17,4 +17,4 @@ coverage:
 
 clean:
 	@-find . -type f -name '*.pyc' -delete ||: > /dev/null 2>&1
-	@-rm -f .coverage coverage.xml htmlcov ||: > /dev/null 2>&1
+	@-rm -rf .coverage coverage.xml htmlcov ||: > /dev/null 2>&1

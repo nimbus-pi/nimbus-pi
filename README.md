@@ -5,7 +5,7 @@
       <img src="https://travis-ci.org/nimbus-pi/nimbus-pi.svg?branch=master" alt="Build Status" align="right">
     </a>
     <a href="https://github.com/nimbus-pi/nimbus-pi/blob/master/LICENSE">
-      <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License" align="right">
+      <img src="http://img.shields.io/badge/license-Apache-2.0-blue.svg?style=flat" alt="License" align="right">
     </a>
     <a href="https://github.com/nimbus-pi/nimbus-pi/releases">
       <img src="http://img.shields.io/badge/release-0.0.0-blue.svg?style=flat" alt="Version" align="right">
