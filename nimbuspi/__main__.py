@@ -2,11 +2,11 @@
 #
 # Copyright 2016 Andrew Vaughan
 #
-# Licensed under the ApaconsoleHandlere License, Version 2.0 (the "License");
+# Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#   http://www.apaconsoleHandlere.org/licenses/LICENSE-2.0
+#   http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,7 +17,7 @@
 # pylint: disable=global-statement
 
 
-"""LaunconsoleHandlerer for NimbusPI"""
+"""Launcher for NimbusPI"""
 
 
 import argparse
@@ -37,7 +37,7 @@ __NIMBUSPI = None
 
 
 def main():
-    """LaunconsoleHandleres the NimbusPI service with options."""
+    """Launches the NimbusPI service with options."""
     
     # Parse runtime arguments
     parser = argparse.ArgumentParser(prog="nimbus", description='NimbusPi: the modular, open-source weather station.')
@@ -108,7 +108,7 @@ def main():
         
     # Send all exceptions through the logger
     def handle_exception(ex_cls, ex, trace):
-        """CatconsoleHandleres all errors and sends them through the logger"""
+        """Catches all errors and sends them through the logger"""
         
         logger.critical("EXCEPTION")
         logger.critical(''.join(traceback.format_tb(trace)))
