@@ -15,8 +15,7 @@ script:
   - python --version
   - pylint nimbuspi --rcfile=.pylintrc
   - pylint nimbuspi/tests/steps/*.py --rcfile=.pylintrc
-  - behave nimbuspi/tests/
+  - behave -f progress nimbuspi/tests/
 
-#after_failure:
-#  - echo "FAILURE DETAILS (from XML reports):"
-#  - bin/behave.junit_filter.py --status=failed reports
+after_failure:
+  - behave -f progress -D details-on-failure nimbuspi/tests/
