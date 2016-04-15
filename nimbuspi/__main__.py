@@ -134,11 +134,11 @@ def cleanup():
     
     logger = logging.getLogger('controller')
     
-    logger.debug('Haulting services')
-    __NIMBUSPI.stop()
+    if __NIMBUSPI:
+        logger.debug('Haulting services')
+        __NIMBUSPI.stop()
     
     logger.debug('Exiting')
-    sys.exit(0)
 
 
 
