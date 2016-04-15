@@ -20,7 +20,11 @@ $ python --version
 ```
 
 If Python is not installed on your system, you can find instructions for installing it
-[on the Python website](https://wiki.python.org/moin/BeginnersGuide/Download).
+[on the Python website](https://wiki.python.org/moin/BeginnersGuide/Download).  You will also need to install `pip`:
+
+```bash
+$ sudo easy_install pip
+```
 
 Once installed, the Makefile will install all required dependencies for you:
 
