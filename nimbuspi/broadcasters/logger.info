@@ -1,0 +1,9 @@
+[Core]
+Name = logger
+Module = logger
+   
+[Documentation]
+Description = A broadcaster that periodically outputs information to the Python log.
+Author = Andrew Vaughan
+Version = 1.0.0
+Website = http://nimbuspi.com/

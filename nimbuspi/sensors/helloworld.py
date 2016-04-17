@@ -6,4 +6,3 @@ class HelloWorld(plugins.ISensorPlugin):
     
     def get_state(self):
         return "Hello World!"
-    
