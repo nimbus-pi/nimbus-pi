@@ -2,20 +2,43 @@
 
 from yapsy.IPlugin import IPlugin
 
+import nimbuspi.threads as threads
 
 
-class ISensorPlugin(IPlugin):
+class INimbusPlugin(IPlugin):
+    """Parent class for all NimbusPI plugins"""
+    
+    
+    def __init__(self):
+        """Creates a nimbus plugin"""
+        
+        IPlugin.__init__(self)
+        
+        self.config = dict()
+        self.nimbus = None
+        self.thread = threads.NimbusThread()
+    
+    
+    def set_nimbus(self, nimbus):
+        """Sets the nimbus object for the plugin"""
+        
+        self.nimbus = nimbus
+
+
+
+class ISensorPlugin(INimbusPlugin):
     """Defines the interface for all Sensor plugins in Nimbus Pi"""
     
     CATEGORY = "Sensor"
     
     def get_state(self):
         """Returns the state of the sensor."""
-        raise NotImplementedError("Sensor interface not fully implemented")
+        
+        raise NotImplementedError
 
 
 
-class IBroadcasterPlugin(IPlugin):
+class IBroadcasterPlugin(INimbusPlugin):
     """Defines the interface for all Broadcaster plugins in Nimbus Pi"""
     
     CATEGORY = "Broadcaster"
