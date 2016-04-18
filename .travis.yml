@@ -9,13 +9,17 @@ cache:
 
 install:
   - travis_retry pip install -q -r requirements.txt
+  - travis_retry pip install coveralls
 #  - python setup.py -q install
 
 script:
   - python --version
   - pylint nimbuspi --rcfile=.pylintrc
   - pylint nimbuspi/tests/steps/*.py --rcfile=.pylintrc
-  - behave -f progress nimbuspi/tests/
+  - coverage run --source=./nimbuspi/ --omit=nimbuspi/__*,nimbuspi/tests/* -m behave -f progress nimbuspi/tests/
+
+after_success:
+  - coveralls
 
 after_failure:
   - behave -f progress -D details-on-failure nimbuspi/tests/

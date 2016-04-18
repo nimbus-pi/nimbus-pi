@@ -3,6 +3,7 @@
 [![Version][version-image]][version-url]
 [![License][license-image]][license-url]
 [![Build Status][build-image]][build-url]
+[![Coverage][coverage-image]][coverage-url]
 
 
 NimbusPi is a Raspberry Pi based weather station.  It is intended to be modular and extensible, working with custom
@@ -135,9 +136,11 @@ limitations under the License.
 
 
 
-[version-image]: http://img.shields.io/badge/release-0.0.0-blue.svg?style=flat
-[version-url]:   https://github.com/nimbus-pi/nimbus-pi/releases
-[license-image]: http://img.shields.io/badge/license-Apache_2.0-blue.svg?style=flat
-[license-url]:   https://github.com/nimbus-pi/nimbus-pi/blob/master/LICENSE
-[build-image]:   https://travis-ci.org/nimbus-pi/nimbus-pi.svg?branch=master
-[build-url]:     https://travis-ci.org/nimbus-pi/nimbus-pi
+[version-image]:  http://img.shields.io/badge/release-0.0.0-blue.svg?style=flat
+[version-url]:    https://github.com/nimbus-pi/nimbus-pi/releases
+[license-image]:  http://img.shields.io/badge/license-Apache_2.0-blue.svg?style=flat
+[license-url]:    https://github.com/nimbus-pi/nimbus-pi/blob/master/LICENSE
+[build-image]:    https://travis-ci.org/nimbus-pi/nimbus-pi.svg?branch=master
+[build-url]:      https://travis-ci.org/nimbus-pi/nimbus-pi
+[coverage-image]: https://coveralls.io/repos/github/nimbus-pi/nimbus-pi/badge.svg?branch=master
+[coverage-url]:   https://coveralls.io/github/nimbus-pi/nimbus-pi?branch=master
