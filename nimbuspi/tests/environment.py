@@ -1,10 +1,9 @@
-# pylint: disable=wildcard-import,unused-wildcard-import
+# pylint: disable=wildcard-import,unused-wildcard-import,unused-argument,global-statement,superfluous-parens
 
 """Environment controls for Behave"""
 
 
 import logging
-import traceback
 
 from behave import *
 from testfixtures import LogCapture
@@ -29,6 +28,9 @@ def after_scenario(context, scenario):
     if 'nimbuspi' in context:
         del context.nimbuspi
     
+    if 'sensor' in context:
+        del context.sensor
+    
     if 'state' in context:
         del context.state
     
@@ -36,10 +38,13 @@ def after_scenario(context, scenario):
         del context.exception
     
     context.log.uninstall()
+    del context.log
 
 
 
 def setup_debug_on_error(userdata):
+    """Turns on debugging if there is a failure"""
+    
     global DETAILS_ON_FAILURE
     
     DETAILS_ON_FAILURE = userdata.getbool("details-on-failure")
@@ -47,12 +52,14 @@ def setup_debug_on_error(userdata):
 
 
 def before_all(context):
+    """Sets the debug flag before each step"""
+    
     setup_debug_on_error(context.config.userdata)
 
 
 
 def after_step(context, step):
-    global FAILURES
+    """Checks for failures and prints details"""
     
     if DETAILS_ON_FAILURE and step.status == "failed":
         FAILURES.append({
@@ -62,6 +69,8 @@ def after_step(context, step):
 
 
 def after_all(context):
+    """Prints any failures found"""
+    
     if FAILURES:
         print("\n")
         print("-" * 80)

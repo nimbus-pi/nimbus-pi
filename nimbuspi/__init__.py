@@ -22,5 +22,5 @@ from nimbuspi.services import NimbusPI
 
 
 __all__ = [
-    'services'
+    'services',
 ]

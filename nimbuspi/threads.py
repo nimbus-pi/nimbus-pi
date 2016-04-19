@@ -7,13 +7,16 @@ class NimbusThread(threading.Thread):
     """A thread with a stop flag"""
     
     
-    def __init__(self):
+    def __init__(self, config, delay=0.5, nimbus=None):
         """Creates a NimbusThread"""
         
         threading.Thread.__init__(self)
         
         self.stop_event = threading.Event()
-        self.delay = 0.5
+        
+        self.delay = delay
+        self.config = config
+        self.nimbus = nimbus
     
     
     
@@ -36,3 +39,9 @@ class NimbusThread(threading.Thread):
         """Marks the thread to stop after the next iteration"""
         
         self.stop_event.set()
+    
+    
+    def set_delay(self, delay):
+        """Sets the delay for the thread"""
+        
+        self.delay = delay
