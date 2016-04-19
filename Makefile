@@ -6,6 +6,7 @@ install:
 
 test:
 	pylint nimbuspi --rcfile=.pylintrc
+	pylint nimbuspi/tests/*.py --rcfile=.pylintrc
 	pylint nimbuspi/tests/steps/*.py --rcfile=.pylintrc
 	behave nimbuspi/tests/
 

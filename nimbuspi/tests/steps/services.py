@@ -1,4 +1,4 @@
-# pylint: disable=import-error,wildcard-import,unused-wildcard-import,missing-docstring,undefined-variable,function-redefined,unused-argument,superfluous-parens
+# pylint: disable=import-error,wildcard-import,unused-wildcard-import,missing-docstring,undefined-variable,function-redefined,unused-argument
 
 """Behavioral controls for testing the NimbusPI service"""
 

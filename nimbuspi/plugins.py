@@ -16,13 +16,15 @@ class INimbusPlugin(IPlugin):
         
         self.config = dict()
         self.nimbus = None
-        self.thread = threads.NimbusThread()
+        
+        self.thread = threads.NimbusThread(config=self.config, nimbus=self.nimbus)
     
     
     def set_nimbus(self, nimbus):
         """Sets the nimbus object for the plugin"""
         
         self.nimbus = nimbus
+        self.thread.nimbus = nimbus
 
 
 

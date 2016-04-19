@@ -1,6 +1,7 @@
-import logging
+"""Logging broadcaster for NimbusPI"""
 
-from string import Template
+
+import logging
 
 import nimbuspi.plugins as plugins
 import nimbuspi.threads as threads
@@ -15,11 +16,17 @@ class Logger(plugins.IBroadcasterPlugin):
         
         plugins.IBroadcasterPlugin.__init__(self)
         
+        self.config = dict()
+        
         self.config['delay'] = 2
         self.config['level'] = logging.INFO
         self.config['format'] = "{config[name]} @ {config[location]}"
         
-        self.thread = LoggerThread()
+        self.thread = LoggerThread(
+            delay=self.config['delay'],
+            config=self.config,
+            nimbus=self.nimbus
+        )
     
     
     
@@ -27,15 +34,12 @@ class Logger(plugins.IBroadcasterPlugin):
         """Activates the logger broadcaster plugin"""
         
         # Override the defaults with any configuration settings
-        if (self.nimbus.config.has_section('logger')):
+        if self.nimbus.config.has_section('logger'):
             for option in self.nimbus.config.options('logger'):
                 self.config[option] = self.nimbus.config.get('logger', option)
         
         # Start the subprocess
-        self.thread.delay  = self.config['delay']
-        self.thread.config = self.config
-        self.thread.nimbus = self.nimbus
-        
+        self.thread.set_delay(self.config['delay'])
         self.thread.start()
     
     
@@ -59,5 +63,5 @@ class LoggerThread(threads.NimbusThread):
             output = self.config['format'].format(**self.nimbus.get_states())
             logging.getLogger('broadcaster').log(self.config['level'], output)
             
-        except KeyError as e:
-            logging.getLogger('broadcaster').warn('Logging failed - could not parse keyword "%s"', e.message)
+        except KeyError as err:
+            logging.getLogger('broadcaster').warn('Logging failed - could not parse keyword "%s"', err.message)
